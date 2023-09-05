@@ -8,6 +8,10 @@
 
 This project employs a Python-based implementation of the watershed algorithm to segment buildings in aerial images using the OpenCV library. The approach involves image pre-processing, morphological operations, distance transform computation, and the application of the watershed algorithm. The segmentation results indicate high accuracy in building detection. This research finds applications in urban planning, disaster management, and more.
 
+## Changes
+
+[Changelog](CHANGELOG.md)
+
 ## Features
 
 - **Python and OpenCV**: Utilizes the power of OpenCV for image processing and segmentation.
