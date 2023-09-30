@@ -4,7 +4,6 @@
 # updated: 05/07/2023
 
 import cv2
-# Import libraries
 import numpy as np
 
 
@@ -156,7 +155,5 @@ if __name__ == "__main__":
           \n\n
           ''')
     image_path = "images/istanbul12.jpg"
-    # image_path = "images/istanbul10.jpg"
-    # image_path = "images/istanbul8.jpg"
 
     image_segmentation(image_path)
