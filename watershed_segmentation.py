@@ -103,31 +103,20 @@ def threshold(img, T):  # global thresholding
 
 
 def erode(img, kernel, iterations):
-    # initialize the output image
-    for i in range(iterations):
-        output = np.zeros(img.shape, dtype=np.uint8)
-        M, N = np.shape(img)
+    """
+    Apply erosion to the input image using OpenCV's cv2.erode function.
 
-        # iterate over the image
-        for i in range(0, M):
-            for j in range(0, N):
-                erosion_possible = True
-                # iterate over the kernel (structuring element)
-                for dy, row in enumerate(kernel):
-                    for dx, value in enumerate(row):
-                        if value == 1:
-                            new_i = i + dy - 1
-                            new_j = j + dx - 1
-                            if new_i < 0 or new_i >= M or new_j < 0 or new_j >= N:
-                                erosion_possible = False
-                                break  # out of bounds
-                            elif img[new_i, new_j] == 0:
-                                erosion_possible = False
-                                break  # pixel is not part of the object
-                if erosion_possible:
-                    output[i, j] = 255
-                else:
-                    output[i, j] = 0
+    Args:
+        img (numpy.ndarray): Input binary image.
+        kernel (numpy.ndarray): The structuring element for erosion.
+        iterations (int): The number of times erosion should be applied.
+
+    Returns:
+        numpy.ndarray: Eroded image.
+    """
+    from cv2 import erode
+    output = erode(img, kernel, iterations=iterations)
+    
     return output
 
 
